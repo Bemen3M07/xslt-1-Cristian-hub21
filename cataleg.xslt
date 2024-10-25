@@ -8,12 +8,15 @@
     <tr bgcolor="blue">
       <th style="text-align:left">Title</th>
       <th style="text-align:left">Artist</th>
+      <th style="text-align:left">Price</th>
     </tr>
-    <xsl:for-each select="catalog/cd">
-      <xsl:sort select='artist'/>
+    <xsl:for-each select="catalog/cd[price &lt; 10]">
+      <!--<xsl:for-each select="catalog/cd[country='USA']"> Filtrar artistas USA-->
+      <!--<xsl:sort select='artist'/> Ordenador por artista--> 
     <tr>
       <td><xsl:value-of select="title"/></td>
       <td><xsl:value-of select="artist"/></td>
+      <td><xsl:value-of select="price"/></td>
     </tr>
     </xsl:for-each>
   </table>
